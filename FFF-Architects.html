@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./img/mountain.ico"/>
+    <link rel="stylesheet" href="./CSS/FFF-Architects.min.css">
+    <title>第二週作業｜FFF Architects</title>
+</head>
+<body>
+    <!-- header -->
+    <header>
+        <!-- p+h1+p*2+.sns-wrap>a*4>img -->
+        <span>Here's</span>
+        <h1>FFF Architects</h1>
+        <p>Architectural Design & Interior-design</p>
+        <ul class="sns-wrap">
+            <li><a href="#"><img src="./img/iconfinder_be.svg" alt="be"></a></li>
+            <li><a href="#"><img src="./img/iconfinder_fb.svg" alt="fb"></a></li>
+            <li><a href="#"><img src="./img/iconfinder_ig.svg" alt="ig"></a></li>
+            <li><a href="#"><img src="./img/iconfinder_yt.svg" alt="yt"></a></li>
+        </ul>
+    </header>
+    <!-- main -->
+    <main>
+    <!-- About -->
+        <section class="about container-sm">
+            <h2 class="about-title">About</h2>
+            <div class="about-img">
+                <img src="https://images.unsplash.com/photo-1505929475612-6673ef20e436?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80" alt="">
+            </div>
+            <ul class="profile-list">
+                <li>FFF Studio</li>
+                <li>Founded in 1990</li>
+                <li>San Francisco, CA, US</li>
+            </ul>
+            <ul class="awards-list">
+                <li class="circle-style">
+                    <div></div>
+                    <p>Architect / Interior-design</p>
+                </li>
+                <li class="circle-style">
+                    <div></div>
+                    <p>The Architecture Master Prize</p>
+                </li>
+                <li class="circle-style">
+                    <div></div>
+                    <p>International Design Awards</p>
+                </li>
+            </ul>
+        </section>
+    <!-- Style & Belief -->
+        <section class="style-belief bg-b">
+            <h2 class="style-title">Style & Belief</h2>
+            <p class="container-sm">FreeSpace For Freedom</p>
+            <p class="container-sm">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla, sapiente.</p>
+            <div class="belief-img">
+                <img src="https://images.unsplash.com/photo-1455612693675-112974d4880b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80" alt="">
+            </div>
+            <div class="style-wrap container">
+                <div class="style-img">
+                    <img src="https://images.unsplash.com/photo-1552066294-c560e48b437a?ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80" alt="">
+                </div>
+                <div class="style-img">
+                    <img src="https://images.unsplash.com/photo-1551389326-9875cb21594c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80" alt="">
+                </div>
+            </div>
+        </section>
+    <!-- Works -->
+        <section class="works" id="app">
+            <h2 class="works-title">Works</h2>
+            <p class="info-works">1990 - 2020 works<br>Lorem ipsum dolor sit amet.</p>
+            <ul class="container">
+                <li v-for="work in works">
+                    <div class="works-img">
+                        <img :src=work.photo alt="">
+                    </div>
+                    <p>{{work.name}}</p>
+                </li>
+            </ul>
+        </section>
+    </main>
+    <!-- Contact -->
+    <footer class="bg-b">
+        <h2 class="title-contact">Contact</h2>
+        <p>Mail：xxxd@hexschool.com</p>
+        <p>Phone Number：0910123456</p>
+    </footer>
+
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+<script>
+    var app = new Vue({
+    el: '#app',
+    data: {
+        works: [
+            {
+                name: "Cottage．CA｜2020",
+                photo: "https://images.unsplash.com/photo-1557236516-fc0a2c97157a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80",
+            },
+            {
+                name: "Minimumism．JP｜1999",
+                photo: "https://images.unsplash.com/photo-1532709039076-0603e6f68432?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80",
+            },
+            {
+                name: "Moroccan．EU｜1999",
+                photo: "https://images.unsplash.com/photo-1505576391880-b3f9d713dc4f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80",
+            },
+            {
+                name: "Fantastic．US｜2019",
+                photo: "https://images.unsplash.com/photo-1505692795793-20f543407193?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1023&q=80",
+            },
+            {
+                name: "Scandinavian．EU｜2019",
+                photo: "https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80",
+            },
+            {
+                name: "Victorianage．US",
+                photo: "https://images.unsplash.com/photo-1526055577108-80193f001dde?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80",
+            },
+            {
+                name: "French country．US｜2019",
+                photo: "https://images.unsplash.com/photo-1550361036-a5a8a92682ed?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80",
+            },
+            {
+                name: "Classic．US｜2019",
+                photo: "https://images.unsplash.com/photo-1507452786732-f2dc0a2e7b7f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1013&q=80",
+            }
+        ]
+    },
+    });
+</script>
+</body>
+</html>

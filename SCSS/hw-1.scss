@@ -1,0 +1,265 @@
+@import 'reset';
+
+$mainText_C: #000000;
+$subText_C: #FFF;
+$subTitle_C: #A00404;
+$mainBg_C: #415165;
+$subBg_C: #96A9C4;
+
+$basicSize: 24px;
+$subSize: 16px;
+
+
+@mixin sectionTitle {
+    h2 {
+        font-size: 32px;
+        font-weight: 600;
+        line-height: 45px;
+        padding-bottom: $subSize/2;
+        border-bottom: 1px solid #000;
+        span {
+            font-size: $basicSize;
+            margin-left: $subSize;
+            color: $subTitle_C;
+        }
+    }
+}
+
+@mixin sectionTitle-middle {
+    h2 {
+        width: 996px;
+        border-bottom: 1px solid $subText_C;
+        font-size: 32px;
+        font-weight: 600;
+        line-height: 45px;
+        text-align: center;
+        padding-top: $basicSize;
+        padding-bottom: $subSize/2;
+        margin-bottom: 40px;
+        span {
+            margin-left: $subSize;
+            font-size: $basicSize;
+        }
+    }
+}
+
+
+body {
+    font-size: $basicSize;
+    font-family: '微軟正黑體', 'sans-serif';
+}
+
+section {
+    width: 100%;
+}
+
+p {
+    line-height: 1.5;
+}
+
+#wrap {
+    max-width: 1920px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: auto;
+}
+
+
+// 人名標題
+#titleName {
+    margin-bottom: $basicSize*2;
+    .container {
+        padding: $basicSize 0;
+        border-bottom: 2px solid $mainText_C;
+        h1 {
+            font-size: 80px;
+        }
+    }
+}
+
+// 頭像
+#propic {
+    margin-bottom: $basicSize*2;
+    .propic_wrap {
+        width: 324px;
+        height: 324px;
+        overflow: hidden;
+        border-radius: 50%;
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+}
+
+// 個人資料
+#profile {
+    .container {
+        @include sectionTitle;
+        position: relative;
+        ul {
+            padding: $subSize 0;
+            margin-left: $subSize*3;
+            li {
+                margin-bottom: $basicSize;
+                &::before {
+                    content: '';
+                    width: $subSize;
+                    height: $subSize;
+                    border-radius: 50%;
+                    left: 16px;
+                    margin-top: $basicSize/3;
+                    position: absolute;
+                    background-color: $subBg_C;
+                }
+                p {
+                    margin-bottom: $basicSize/3;
+                }
+            }
+        }
+    }
+}
+
+// 學歷
+#education {
+    margin-bottom: $basicSize*3;
+    .container {  
+        position: relative;
+        @include sectionTitle;
+        ul {
+            padding: $subSize 0;
+            margin-left: $subSize*3;
+            &::before {
+                content: '';
+                width: 1px;
+                height: $subSize*3;
+                position: absolute;
+                bottom: 50px;
+                left: $basicSize;
+                background-color: $subBg_C;
+            }
+            li {
+                margin-bottom: $basicSize;
+                &::before {
+                    content: '';
+                    width: $subSize;
+                    height: $subSize;
+                    border-radius: 50%;
+                    margin-top: $basicSize/3;
+                    position: absolute;
+                    left: 16px;
+                    background-color: $subBg_C;
+                }
+                p {
+                    margin-bottom: $basicSize/3;
+                }
+            }
+        }
+    }
+}
+
+// 技能
+#skills {
+    margin-bottom: $basicSize*3;
+    color: $subText_C;
+    position: relative;
+    // 最底部色塊用偽元素
+    &::before {
+        content: '';
+        width: 100%;
+        height: 360px;
+        position: absolute;
+        top: 67px;
+        background-color: $subBg_C;
+        z-index: -1;
+    }
+    .container {
+        height: 494px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: $mainBg_C;
+        @include sectionTitle-middle;
+        .skill-list {
+            margin-bottom: 56px;
+            padding-left: $basicSize;
+            border-left: 1px solid $subBg_C;
+            li {
+                height: 32px;
+                margin-bottom: 16px;
+                font-weight: 300;
+            }
+        }
+    }
+}
+
+// 工作經驗
+#workEx {
+    margin-bottom: $basicSize*2;
+    .container {
+        @include sectionTitle;
+        ul{
+            padding-left: $subSize;
+            margin-top: $basicSize;
+            margin-left: $subSize;
+            border-left: 1px solid $subBg_C;
+            li{
+                margin-top: $subSize*2;
+                font-weight: 600;
+                h3 {
+                    margin-bottom: $subSize/2;
+                }
+                img {
+                    width: 90px;
+                    height: 90px;
+                    display: block;
+                    margin-bottom: $subSize/2;
+                }
+                p {
+                    font-size: 20px;
+                    font-weight: 300;
+                    display: inline-block;
+                    width: (1200px-$subSize*3)/2;
+                }
+            }
+            li:nth-child(1) {
+                margin-top: 0;
+            }
+        }
+    }
+}
+
+// 聯絡方式
+#contact {
+    width: 100%;
+    height: 401px;
+    background-color: $mainBg_C;
+    .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        @include sectionTitle-middle;
+        color: $subText_C;
+        .contact-text {
+            text-align: center;
+            font-weight: 300;
+            text-decoration: none;
+            color: $subText_C;
+            margin-bottom: $subSize;
+        }
+        .sns-wrap {
+            display: flex;
+            justify-content: center;
+            a {
+                width: $basicSize*2;
+                height: $basicSize*2;
+            }
+            a:nth-child(2) {
+                margin: 0 $basicSize;
+            }
+        }
+    }
+}
